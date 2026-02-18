@@ -14,7 +14,7 @@ module.exports = async function handler(req, res) {
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader('Access-Control-Allow-Origin', '*');
     if (!track) return res.end('Nothing playing right now!');
-    res.end(`Now Playing: ${track.title} by ${track.grandparentTitle}`);
+    res.end(`${track.title} by ${track.grandparentTitle}`);
   } catch(e) {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
     res.end('Nothing playing right now!');
