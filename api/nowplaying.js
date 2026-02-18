@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     const sessions = data?.MediaContainer?.Metadata || [];
     const track = sessions.find(s => s.type === 'track' && s.User?.id === ID);
     if (!track) return res.send('Nothing playing right now!');
-    res.send(`🎵 ${track.title} — ${track.grandparentTitle} (${track.parentTitle})`);
+    res.send(`🎵 ${track.title} — ${track.grandparentTitle} (${track.parentTitle})🎵 `);
   } catch(e) {
     res.send('Could not reach Plex.');
   }
