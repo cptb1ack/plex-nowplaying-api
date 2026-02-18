@@ -12,7 +12,7 @@ module.exports = async function handler(req, res) {
     const track = sessions.find(s => s.type === 'track' && s.User?.id === ID);
     res.setHeader('Content-Type', 'text/plain');
     if (!track) return res.end('Nothing playing right now!');
-    res.end(`🎵 ${track.title} — ${track.grandparentTitle} (${track.parentTitle})`);
+    res.end(`${track.title} — ${track.grandparentTitle} (${track.parentTitle})`);
   } catch(e) {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Nothing playing right now!');
