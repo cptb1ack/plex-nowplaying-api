@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const PLEX_URL   = process.env.PLEX_URL;
   const PLEX_TOKEN = process.env.PLEX_TOKEN;
   const ID         = process.env.ID;
